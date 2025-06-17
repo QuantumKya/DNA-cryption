@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Lingo;
+    src: url("./Lingo.ttf");
+}
+
+html {
+    overflow-x: hidden;
+    font-size: 22px;
+    font-family: Lingo;
+}
+
+body {
+    background-color: #141414;
+    color: whitesmoke;
+    margin: 0px;
+}
+
+canvas {
+    position: relative;
+    left: 20px;
+}
+
+#main {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    width: 100%;
+}
+
+#htitle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+#ptitle {
+    position: absolute;
+    top: 23px;
+    left: calc(50vw + 250px);
+    width: 100%;
+    text-align: left;
+}
