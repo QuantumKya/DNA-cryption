@@ -1,5 +1,6 @@
 ## DNA Devlog #1 - 6/17/2025
 # Starting goals - Bézier curves!
+<small>[Next Devlog](DNA_DEVLOG_2.md)</small>
 
 The user should be able to input a file of a reasonable size and get the data as a DNA encoding. A string of text would be boring, so I plan to make the output an image of the DNA strand. I want the DNA string to be reorientable, adding customization to the output.
 
@@ -12,3 +13,5 @@ In this update I made a quick and simple implementation of an editable Bézier 
 From here I'll add more general spline editing and probably focus on the actual data encoding functionality LAST.
 
 Thanks for reading!
+
+[Next Devlog -->](DNA_DEVLOG_2.md)

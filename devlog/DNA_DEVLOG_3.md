@@ -1,5 +1,6 @@
 ## DNA Devlog #3 - 6/17/2025
 # Drawing DNA
+<small>[Previous Devlog](DNA_DEVLOG_2.md)        [Next Devlog](DNA_DEVLOG_4.md)</small>
 
 ## Explanation
 ###### [Skip to Implementation](#implementation)
@@ -14,3 +15,6 @@ I assigned colors to each DNA molecule, ATCG, giving its color and its partner's
 I then made it draw to the screen when given a string (pun intended) of DNA.
 Here is a demonstration with the string ACTGATAGCTA. As you can see, only one side of the DNA shows the data inputted, because both sides must match.
 ![ATCG](DNA_devlog_3_drawn.png)
+
+[Next Devlog -->](DNA_DEVLOG_4.md)
+[<-- Previous Devlog](DNA_DEVLOG_2.md)

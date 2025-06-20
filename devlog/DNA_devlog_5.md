@@ -1,5 +1,6 @@
 ## DNA Devlog #4 - 6/19/2025
 # Equal spacing for all!
+<small>[Previous Devlog](DNA_DEVLOG_4.md)</small>
 
 ## Explanation
 ###### [Skip to Implementation](#implementation)
@@ -20,3 +21,5 @@ I created a Bézier class to store points and parametrizations. Here is that cla
 
 Here's the outcome of the method, creating equally spaced molecules no matter how stretched the curve is!
 ![Equally Spaced Molecules](DNA_devlog_5_equal_space.png)
+
+[<-- Previous Devlog](DNA_DEVLOG_4.md)

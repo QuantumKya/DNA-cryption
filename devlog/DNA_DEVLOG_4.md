@@ -1,5 +1,6 @@
 ## DNA Devlog #4 - 6/19/2025
 # 2 C<sub>2</sub> 4 U
+<small>[Previous Devlog](DNA_DEVLOG_3.md)        [Next Devlog](DNA_DEVLOG_5.md)</small>
 
 ## Explanation
 ###### [Skip to Implementation](#implementation)
@@ -16,3 +17,6 @@ A simple way to ensure C<sub>2</sub> continuity is to have the connector point b
 Now, when editing the points of each curve, the continuity is preserved, leaving the DNA strand looking smooth. I may change this to only C<sub>1</sub> if it proves too restricting, but for now it looks pretty good!
 ![C2 Continuity](DNA_devlog_4_continuity.mp4);
 There is still an issue with sharp corners. When there is one, some artifacts are left on the corner, making it look ugly. I'll look into that later.
+
+[Next Devlog -->](DNA_DEVLOG_5.md)
+[<-- Previous Devlog](DNA_DEVLOG_3.md)

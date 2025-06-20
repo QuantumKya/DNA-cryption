@@ -1,5 +1,6 @@
 ## DNA Devlog #2 - 6/17/2025
 # *Deriving* local coordinates
+<small>[Previous Devlog](DNA_DEVLOG_1.md)        [Next Devlog](DNA_DEVLOG_3.md)</small>
 
 In order to get the local coordinate spaces on a curve, I need to find the curve's tangent at that point. I wrote a function for this, which involved taking some derivatives!
 Luckily, I like derivatives.
@@ -32,3 +33,6 @@ Here's what getting the coordinate space can do: Draw the outline of a DNA stran
 
 Here's a recording of me doing those derivatives. I'm 99.9999999999999999% sure I made no errors, because the code works well.
 [Doing DNA Derivatives - Devlog Deux](https://youtu.be/37sDUqLihXc)
+
+[Next Devlog -->](DNA_DEVLOG_3.md)
+[<-- Previous Devlog](DNA_DEVLOG_1.md)
