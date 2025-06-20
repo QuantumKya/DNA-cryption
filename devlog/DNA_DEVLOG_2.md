@@ -20,7 +20,7 @@ Well, I can explain it all with some crappy diagrams!
 
 In the image below, there is a Bézier curve.
 
-![](../devlog_media/DNA_devlog_2_tangent_6-19-25.png)
+![](../devlog_media/DNA_devlog_2_tangent.png)
 
 The blue vector is its tangent vector at the point it comes from. The red vector is the normal vector at that point, i.e. a vector orthogonal to the tangent vector.
 

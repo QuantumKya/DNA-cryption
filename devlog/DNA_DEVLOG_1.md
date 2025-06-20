@@ -7,7 +7,7 @@ The simplest way to do that, I think, will be with editable Bézier splines.
 ![Bézier](../devlog_media/DNA_devlog_1_bézier.png)
 
 In this update I made a quick and simple implementation of an editable Bézier curve with four movable points. Here is a demonstration.
-![Demonstration](../devlog_media/DNA_devlog_1_recording_6-17-25.mp4)
+![Demonstration](../devlog_media/DNA_devlog_1_recording.mp4)
 
 From here I'll add more general spline editing and probably focus on the actual data encoding functionality LAST.
 
