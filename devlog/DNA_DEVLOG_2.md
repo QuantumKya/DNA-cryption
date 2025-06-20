@@ -42,4 +42,7 @@ Here's a recording of me doing those derivatives. I'm 99.9999999999999999% sure 
 
 [Doing DNA Derivatives - Devlog Deux](https://youtu.be/37sDUqLihXc)
 
+<br>
+<br>
+
 [<-- Previous Devlog](DNA_DEVLOG_1.md)   [Next Devlog -->](DNA_DEVLOG_3.md)
