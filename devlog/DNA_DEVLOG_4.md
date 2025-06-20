@@ -17,6 +17,5 @@ Now, when editing the points of each curve, the continuity is preserved, leaving
 ![C2 Continuity](DNA_devlog_4_continuity.mp4);
 There is still an issue with sharp corners. When there is one, some artifacts are left on the corner, making it look ugly. I'll look into that later.
 
-<pre>
-[<-- Previous Devlog](DNA_DEVLOG_3.md)     [Next Devlog -->](DNA_DEVLOG_5.md)
-</pre>
+
+[<-- Previous Devlog](DNA_DEVLOG_3.md)   [Next Devlog -->](DNA_DEVLOG_5.md)

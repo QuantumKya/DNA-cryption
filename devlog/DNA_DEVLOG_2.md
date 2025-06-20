@@ -20,7 +20,9 @@ The red vector is the normal vector at that point, i.e. a vector orthogonal to t
 With those two, you can access a local Cartesian coordinate space, which is helpful for drawing double helices around a Bézier curve.
 
 An important facet of linear algebra is that with two orthogonal vectors comes an easy-to-use coordinate system. Simply use the two vectors as the bases and represent other vectors in the space as a linear combination of the two.
+
 If you don't know much (or any) linear algebra and want to learn more, here is a link to an explanation of what I just mentioned in more detail.
+
 [Bases and coordinate systems - Understanding Linear Algebra](https://understandinglinearalgebra.org/sec-bases.html)
 
 ## Implementation
@@ -33,6 +35,4 @@ Here's what getting the coordinate space can do: Draw the outline of a DNA stran
 Here's a recording of me doing those derivatives. I'm 99.9999999999999999% sure I made no errors, because the code works well.
 [Doing DNA Derivatives - Devlog Deux](https://youtu.be/37sDUqLihXc)
 
-<pre>
-[<-- Previous Devlog](DNA_DEVLOG_1.md)     [Next Devlog -->](DNA_DEVLOG_3.md)
-</pre>
+[<-- Previous Devlog](DNA_DEVLOG_1.md)   [Next Devlog -->](DNA_DEVLOG_3.md)
