@@ -22,4 +22,7 @@ I created a Bézier class to store points and parametrizations. Here is that cla
 Here's the outcome of the method, creating equally spaced molecules no matter how stretched the curve is!
 ![Equally Spaced Molecules](../devlog_media/DNA_devlog_5_equal_space.png)
 
+<br>
+<br>
+
 [<-- Previous Devlog](DNA_DEVLOG_4.md)

@@ -11,4 +11,7 @@ In this update I made a quick and simple implementation of an editable Bézier 
 
 From here I'll add more general spline editing and probably focus on the actual data encoding functionality LAST.
 
+<br>
+<br>
+
 [Next Devlog -->](DNA_DEVLOG_2.md)

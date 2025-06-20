@@ -22,5 +22,7 @@ Now, when editing the points of each curve, the continuity is preserved, leaving
 
 There is still an issue with sharp corners. When there is one, some artifacts are left on the corner, making it look ugly. I'll look into that later.
 
+<br>
+<br>
 
 [<-- Previous Devlog](DNA_DEVLOG_3.md)   [Next Devlog -->](DNA_DEVLOG_5.md)

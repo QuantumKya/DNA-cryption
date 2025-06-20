@@ -17,4 +17,7 @@ Here is a demonstration with the string ACTGATAGCTA. As you can see, only one si
 
 ![ATCG](../devlog_media/DNA_devlog_3_drawn.png)
 
+<br>
+<br>
+
 [<-- Previous Devlog](DNA_DEVLOG_2.md)   [Next Devlog -->](DNA_DEVLOG_4.md)
