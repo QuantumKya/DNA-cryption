@@ -1,6 +1,5 @@
 ## DNA Devlog #4 - 6/19/2025
 # Equal spacing for all!
-<small>[Previous Devlog](DNA_DEVLOG_4.md)</small>
 
 ## Explanation
 ###### [Skip to Implementation](#implementation)
