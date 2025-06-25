@@ -63,6 +63,10 @@ function encodeToDNA() {
         reader.onload = function (event) {
             const arrayBuffer = event.target.result;
             const uint8array = new Uint8Array(arrayBuffer);
+            if (uint8array.length > 250) {
+                alert("WAY too big, sorry. Aborting conversion :ε");
+                return;
+            }
 
             let dataString = '';
             for (let i = 0; i < uint8array.length; i++) {
