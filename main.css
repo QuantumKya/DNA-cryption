@@ -15,20 +15,51 @@ body {
     margin: 0px;
 }
 
+#main {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+button {
+    width: fit-content;
+}
+
 canvas {
-    position: relative;
     left: 20px;
 }
 
-#main {
-    position: absolute;
-    top: 100px;
-    left: 0px;
-    width: 100%;
+#canvas-box {
+    position: relative;
+    display: inline-block;
 }
 
-#htitle {
+#canvas-controls {
     position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(20, 20, 20, 0.75);
+    padding: 10px 16px;
+    padding-top: 15px;
+    border-radius: 8px;
+    z-index: 10;
+    font-size: 18px;
+    color: white;
+    font-size: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn {
+    background-color: rgba(20, 20, 20, 1);
+    padding: 7.5px;
+    border-radius: 10px;
+}
+
+
+
+#htitle {
     top: 0px;
     left: 0px;
     width: 100%;

@@ -2,7 +2,6 @@
 # 2 C<sub>2</sub> 4 U
 
 ## Explanation
-###### [Skip to Implementation](#implementation)
 
 Continuity, i.e. *smoothness*, is pretty important when making good-looking splines. There are different levels of continuity to achieve, but only 0% of them really matter! Only the first few are useful for practical purposes, and there are infinitely many past those that don't improve much on the previous ones.
 

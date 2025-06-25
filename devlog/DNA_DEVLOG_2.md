@@ -5,7 +5,6 @@ In order to get the local coordinate spaces on a curve, I need to find the curve
 Luckily, I like derivatives.
 
 ## Explanation
-###### [Skip to Implementation](#implementation)
 
 If you don't know much about curves or splines, you may be wondering,
 

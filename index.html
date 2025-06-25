@@ -20,11 +20,35 @@
         <h1 id="htitle">DNA-cryption</h1>
         <p id="ptitle">by Rohan</p>
     </span>
-    
+
     <div id="main">
 
-        <canvas id="kansas"></canvas>
-        
+        <div id="canvas-box">
+            <canvas id="kansas"></canvas>
+
+            <div id="canvas-controls">
+                <label>
+                    <input type="checkbox" id="toggleBézier" checked>
+                    Show Bézier
+                </label>
+                <label>
+                    <input type="checkbox" id="toggleDNA" checked>
+                    Show DNA
+                </label>
+
+                <hr>
+
+                <label for="datain" class="btn">Upload File...</label>
+                <input type="file" id="datain" style="display: none;">
+
+                <hr>
+
+                <label for="export" class="btn">Export Image</label>
+                <button id="export" style="display: none;"></button>
+            </div>
+        </div>
+
     </div>
+
 </body>
 </html>

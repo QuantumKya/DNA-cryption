@@ -2,7 +2,6 @@
 # Drawing DNA
 
 ## Explanation
-###### [Skip to Implementation](#implementation)
 
 To draw DNA connecting one side of the strand to the other, I need the curve's normal vector, which I explained in [my last devlog](DNA_DEVLOG_2.md). Once I have this, I draw a line from the edge to the center in one color, and repeat to the second edge in the other color.
 

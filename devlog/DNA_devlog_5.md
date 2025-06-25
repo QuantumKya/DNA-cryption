@@ -1,8 +1,7 @@
-## DNA Devlog #4 - 6/19/2025
+## DNA Devlog #5 - 6/20/2025
 # Equal spacing for all!
 
 ## Explanation
-###### [Skip to Implementation](#implementation)
 
 Bézier curves are not uniform in their movement. Some parts of the curve have a higher velocity than others, which makes the spacing between molecules uneven when interpolating linearly over one. Trying to fix this issue led me down a rabbit hole online about arc-length parametrization during which I learned some new techniques and math to help me with handling Béziers.
 
@@ -25,4 +24,4 @@ Here's the outcome of the method, creating equally spaced molecules no matter ho
 <br>
 <br>
 
-[<-- Previous Devlog](DNA_DEVLOG_4.md)
+[<-- Previous Devlog](DNA_DEVLOG_4.md)   [Next Devlog -->](DNA_DEVLOG_6.md)

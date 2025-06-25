@@ -1,27 +1,87 @@
 const canvas = document.getElementById("kansas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = 800;
-canvas.height = 600;
+canvas.width = 1280;
+canvas.height = 720;
+
+const DNA_WIDTH = 50;
 
 
-let segments = [
+var segments = [
     new Bézier(
         new DraggablePoint(new Victor(200, 100)),
         new DraggablePoint(new Victor(400, 200)),
-        new DraggablePoint(new Victor(700, 50)),
-        new DraggablePoint(new Victor(700, 200))
+        new DraggablePoint(new Victor(700, 100)),
+        new DraggablePoint(new Victor(700, 250))
     ),
     new Bézier(
-        new DraggablePoint(new Victor(700, 200)),
+        new DraggablePoint(new Victor(700, 250)),
         new DraggablePoint(new Victor(700, 400)),
         new DraggablePoint(new Victor(300, 400)),
         new DraggablePoint(new Victor(100, 550))
     )
 ];
 
+var code = "ACTGATAGCTAATCGTACCA";
 
-let code = "ACTGATAGCTAATCGTACCA";
+var showBézier = true;
+var showDNA = true;
+
+document.getElementById("toggleBézier").addEventListener("change", (e) => {
+    showBézier = e.target.checked;
+    wholeDraw();
+});
+document.getElementById("toggleDNA").addEventListener("change", (e) => {
+    showDNA = e.target.checked;
+    wholeDraw();
+});
+
+document.getElementById("toggleBézier").checked = true;
+document.getElementById("toggleDNA").checked = true;
+
+document.getElementById("datain").addEventListener("change", (e) => {
+    encodeToDNA();
+    wholeDraw();
+});
+
+wholeDraw();
+
+document.getElementById("export").addEventListener("click", (e) => {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = 'dna-cryption.png';
+    link.click();
+});
+
+
+function encodeToDNA() {
+    const filesIn = document.getElementById("datain");
+    const file = filesIn.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const arrayBuffer = event.target.result;
+            const uint8array = new Uint8Array(arrayBuffer);
+
+            let dataString = '';
+            for (let i = 0; i < uint8array.length; i++) {
+                dataString += uint8array[i].toString(4);
+            }
+            console.log("base4 string:", dataString);
+
+            let dnaString = '';
+            for (let i = 0; i < dataString.length; i++) {
+                dnaString += acidFromDigit(dataString[i]);
+            }
+
+            console.log("DNA string:", dnaString);
+            code = dnaString;
+        };
+
+        reader.readAsArrayBuffer(file);
+    }
+}
 
 function colorFromAcid(char) {
     switch (char) {
@@ -43,8 +103,27 @@ function colorFromAcid(char) {
     }
 }
 
+function acidFromDigit(digit) {
+    switch (digit) {
+        case '0':
+            return 'A';
+            break;
+        case '1':
+            return 'T';
+            break;
+        case '2':
+            return 'C';
+            break;
+        case '3':
+            return 'G';
+            break;
+        default:
+            console.log("INVALID BASE-4 DATA?????!?!?!?!??!!");
+            break;
+    }
+}
 
-const DNA_WIDTH = 50;
+
 
 function drawDNALines(pnts) {
     ctx.strokeStyle = "blue";
@@ -132,9 +211,11 @@ function wholeDraw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
 
-    for (const bzr of segments) drawBézier(bzr.pnts);
-    drawATCG();
-    for (const bzr of segments) drawDNALines(bzr.pnts);
+    if (showBézier) for (const bzr of segments) drawBézier(bzr.pnts);
+    if (showDNA) {
+        drawATCG();
+        for (const bzr of segments) drawDNALines(bzr.pnts);
+    }
 }
 
 wholeDraw();
