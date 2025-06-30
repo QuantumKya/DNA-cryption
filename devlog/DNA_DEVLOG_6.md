@@ -24,4 +24,4 @@ Thanks for reading up to here!
 <br>
 <br>
 
-[<-- Previous Devlog](DNA_DEVLOG_5.md)
+[<-- Previous Devlog](DNA_DEVLOG_5.md)   [Next Devlog -->](DNA_DEVLOG_7.md)
