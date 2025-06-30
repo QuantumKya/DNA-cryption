@@ -145,3 +145,9 @@ class Bézier {
         this.inverseMap.push(1);
     }
 }
+
+
+
+function toggleMenu() {
+    document.getElementById("canvas-controls").style.width = (document.getElementById("stack-menu").style.width == "0") ? "350px" : "0";
+}

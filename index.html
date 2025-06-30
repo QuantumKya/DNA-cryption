@@ -27,6 +27,20 @@
             <canvas id="kansas"></canvas>
 
             <div id="canvas-controls">
+                <!--
+                <label for="menu-close" id="close-button" class="btn">
+                    <i class="fa-solid fa-x"></i>
+                </label>
+                <button id="menu-close" style="display: none;" onclick="toggleMenu()"></button>
+                -->
+
+                <span>
+                    <label for="spline-size">Spline Length</label>
+                    <input type="number" id="spline-size" max="3" min="1">
+                </span>
+
+                <hr>
+
                 <label>
                     <input type="checkbox" id="toggleBézier" checked>
                     Show Bézier
@@ -35,6 +49,10 @@
                     <input type="checkbox" id="toggleDNA" checked>
                     Show DNA
                 </label>
+                
+                <hr>
+
+                <input type="text" id="textin" class="text-input" placeholder="Text to encode...">
 
                 <hr>
 

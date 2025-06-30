@@ -6,6 +6,10 @@ canvas.height = 720;
 
 const DNA_WIDTH = 50;
 
+const DNA_SIDE_WIDTH = 15;
+
+let SPLINE_SIZE = 2;
+
 
 var segments = [
     new Bézier(
@@ -22,7 +26,7 @@ var segments = [
     )
 ];
 
-var code = "ACTGATAGCTAATCGTACCA";
+var code = 'ACTAGCTGTACTGATC';
 
 var showBézier = true;
 var showDNA = true;
@@ -39,8 +43,16 @@ document.getElementById("toggleDNA").addEventListener("change", (e) => {
 document.getElementById("toggleBézier").checked = true;
 document.getElementById("toggleDNA").checked = true;
 
+document.getElementById("textin").value = '';
+document.getElementById("spline-size").value = '2';
+
 document.getElementById("datain").addEventListener("change", (e) => {
-    encodeToDNA();
+    encodeFileToDNA();
+    wholeDraw();
+});
+
+document.getElementById("textin").addEventListener("change", (e) => {
+    encodeTextToDNA(document.getElementById("textin").value);
     wholeDraw();
 });
 
@@ -54,7 +66,97 @@ document.getElementById("export").addEventListener("click", (e) => {
 });
 
 
-function encodeToDNA() {
+document.getElementById("spline-size").addEventListener("change", (e) => {
+    switch (document.getElementById("spline-size").value) {
+        case '1':
+            segments = [
+                new Bézier(
+                    new DraggablePoint(new Victor(200, 100)),
+                    new DraggablePoint(new Victor(400, 200)),
+                    new DraggablePoint(new Victor(700, 100)),
+                    new DraggablePoint(new Victor(700, 250))
+                )
+            ];
+            encodeTextToDNA("hello");
+            break;
+        case '2':
+            segments = [
+                new Bézier(
+                    new DraggablePoint(new Victor(200, 100)),
+                    new DraggablePoint(new Victor(400, 200)),
+                    new DraggablePoint(new Victor(700, 100)),
+                    new DraggablePoint(new Victor(700, 250))
+                ),
+                new Bézier(
+                    new DraggablePoint(new Victor(700, 250)),
+                    new DraggablePoint(new Victor(700, 400)),
+                    new DraggablePoint(new Victor(300, 400)),
+                    new DraggablePoint(new Victor(100, 550))
+                )
+            ];
+            encodeTextToDNA("helloworld");
+            break;
+        case '3':
+            segments = [
+                new Bézier(
+                    new DraggablePoint(new Victor(450, 50)),
+                    new DraggablePoint(new Victor(500, 300)),
+                    new DraggablePoint(new Victor(750, 150)),
+                    new DraggablePoint(new Victor(800, 300))
+                ),
+                new Bézier(
+                    new DraggablePoint(new Victor(800, 300)),
+                    new DraggablePoint(new Victor(850, 450)),
+                    new DraggablePoint(new Victor(625, 575)),
+                    new DraggablePoint(new Victor(450, 525))
+                ),
+                new Bézier(
+                    new DraggablePoint(new Victor(450, 525)),
+                    new DraggablePoint(new Victor(256, 475)),
+                    new DraggablePoint(new Victor(425, 200)),
+                    new DraggablePoint(new Victor(75, 200))
+                )
+            ];
+            encodeTextToDNA("Hello, World!!!");
+            break;
+        default:
+            break;
+    }
+
+    document.getElementById("textin").value = '';
+    SPLINE_SIZE = +document.getElementById("spline-size").value;
+});
+
+// Debug Position Telling
+/*
+document.addEventListener("keydown", (e) => {
+    if (e.key == 'p') {
+        for (let i = 0; i < segments.length; i++) {
+            console.log("Segment " + (i+1) + ":");
+            for (pnt of segments[i].pnts) console.log(pnt.pos.toString());
+        }
+    }
+});
+*/
+
+
+function encodeTextToDNA(text) {
+    let dataString = '';
+    for (let i = 0; i < text.length; i++) {
+        dataString += text.charCodeAt(i).toString(4).padStart(4, '0');
+    }
+    console.log(dataString);
+
+    let dnaString = '';
+    for (let i = 0; i < dataString.length; i++) {
+        dnaString += acidFromDigit(dataString[i]);
+    }
+    console.log(dnaString);
+
+    code = dnaString;
+}
+
+function encodeFileToDNA() {
     const filesIn = document.getElementById("datain");
     const file = filesIn.files[0];
 
@@ -70,16 +172,14 @@ function encodeToDNA() {
 
             let dataString = '';
             for (let i = 0; i < uint8array.length; i++) {
-                dataString += uint8array[i].toString(4);
+                dataString += uint8array[i].toString(4).padStart(4, '0');
             }
-            console.log("base4 string:", dataString);
 
             let dnaString = '';
             for (let i = 0; i < dataString.length; i++) {
                 dnaString += acidFromDigit(dataString[i]);
             }
 
-            console.log("DNA string:", dnaString);
             code = dnaString;
         };
 
@@ -131,7 +231,8 @@ function acidFromDigit(digit) {
 
 function drawDNALines(pnts) {
     ctx.strokeStyle = "blue";
-    ctx.lineWidth = 10;
+    ctx.fillStyle = "blue";
+    ctx.lineWidth = DNA_SIDE_WIDTH;
     
     ctx.beginPath();
     const pinit = BézierPoint(pnts, 0);
@@ -152,18 +253,39 @@ function drawDNALines(pnts) {
         ctx.lineTo(point.x - tant.y, point.y + tant.x);
     }
     ctx.stroke();
+
+    const pstart = BézierPoint(pnts, -0.02);
+    const tstart = BézierTangent(pnts, -0.02).norm().multiply(new Victor(DNA_WIDTH, DNA_WIDTH));
+
+    const pend = BézierPoint(pnts, 1.03);
+    const tend = BézierTangent(pnts, 1.03).norm().multiply(new Victor(DNA_WIDTH, DNA_WIDTH));
+
+    ctx.beginPath();
+    ctx.arc(pstart.x + tstart.y, pstart.y - tstart.x, DNA_SIDE_WIDTH / 2, 0, 360);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(pstart.x - tstart.y, pstart.y + tstart.x, DNA_SIDE_WIDTH / 2, 0, 360);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(pend.x + tend.y, pend.y - tend.x, DNA_SIDE_WIDTH / 2, 0, 360);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(pend.x - tend.y, pend.y + tend.x, DNA_SIDE_WIDTH / 2, 0, 360);
+    ctx.fill();
 }
 
 function drawATCG() {
     ctx.lineWidth = 10;
 
-    const strandPer = code.length / segments.length;
+    const strandPer = Math.ceil(code.length / SPLINE_SIZE);
     for (let s = 0; s < segments.length; s++) {
         const bzr = segments[s];
         for (let i = 0; i <= strandPer; i++) {
-            if (s > 0 && i == 0) continue;
+            if (s > segments.length - 1 && i == 0) continue;
 
-            const clr = colorFromAcid(code[strandPer * s + i - s]);
+            const acid = code[strandPer * s + i - s];
+            const clr = colorFromAcid(acid);
+            if (!clr) continue;
 
             ctx.beginPath();
             const t = bzr.inverseMap[Math.floor(i * 100 / (strandPer))];

@@ -57,6 +57,49 @@ canvas {
     border-radius: 10px;
 }
 
+.text-input {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6em 1em;
+    font-size: 1rem;
+    outline: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.text-input::placeholder {
+    color: #aaa;
+}
+
+.text-input:focus {
+    background-color: #2a2a2a;
+    box-shadow: 0 0 0 2px #4A90E2;
+}
+
+#spline-size {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6em 1em;
+    outline: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#close-button {
+    width: 25px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+hr {
+    opacity: 0;
+}
+
 
 
 #htitle {
