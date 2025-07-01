@@ -195,16 +195,16 @@ function encodeFileToDNA() {
 function colorFromAcid(char) {
     switch (char) {
         case 'A':
-            return ["orange", "green"];
+            return ["red", "cyan"];
             break;
         case 'T':
-            return ["green", "orange"];
+            return ["cyan", "red"];
             break;
         case 'C':
-            return ["yellow", "lightblue"];
+            return ["yellow", "green"];
             break;
         case 'G':
-            return ["lightblue", "yellow"];
+            return ["green", "yellow"];
             break;
         default:
             console.log("INVALID DNA CHARACTER??!!?!!");
