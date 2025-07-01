@@ -148,6 +148,14 @@ class Bézier {
 
 
 
-function toggleMenu() {
-    document.getElementById("canvas-controls").style.width = (document.getElementById("stack-menu").style.width == "0") ? "350px" : "0";
+function closeMenu() {
+    document.getElementById("canvas-controls").style.height = "0px";
+    document.getElementById("canvas-controls").style.width = "0px";
+    document.getElementById("open-button").style.display = "block";
+}
+
+function openMenu() {
+    document.getElementById("canvas-controls").style.height = "fit-content";
+    document.getElementById("canvas-controls").style.width = "300px";
+    document.getElementById("open-button").style.display = "none";
 }

@@ -48,11 +48,13 @@ document.getElementById("spline-size").value = '2';
 
 document.getElementById("datain").addEventListener("change", (e) => {
     encodeFileToDNA();
+    for (const bzr of segments) bzr.update();
     wholeDraw();
 });
 
 document.getElementById("textin").addEventListener("change", (e) => {
     encodeTextToDNA(document.getElementById("textin").value);
+    for (const bzr of segments) bzr.update();
     wholeDraw();
 });
 
@@ -125,6 +127,9 @@ document.getElementById("spline-size").addEventListener("change", (e) => {
 
     document.getElementById("textin").value = '';
     SPLINE_SIZE = +document.getElementById("spline-size").value;
+
+    for (const bzr of segments) bzr.update();
+    wholeDraw();
 });
 
 // Debug Position Telling

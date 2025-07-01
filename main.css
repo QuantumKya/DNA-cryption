@@ -39,16 +39,15 @@ canvas {
     top: 10px;
     right: 10px;
     background-color: rgba(20, 20, 20, 0.75);
-    padding: 10px 16px;
-    padding-top: 15px;
+    padding: 10px;
     border-radius: 8px;
     z-index: 10;
-    font-size: 18px;
     color: white;
     font-size: 85%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    transition: 350ms ease-in-out;
+    overflow: hidden;
 }
 
 .btn {
@@ -82,17 +81,25 @@ canvas {
     color: #ffffff;
     border: none;
     border-radius: 10px;
-    padding: 0.6em 1em;
+    padding: 5px 10px;
     outline: none;
-    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-#close-button {
+.toggle-buttons {
     width: 25px;
-    text-align: center;
+    text-align: right;
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 11;
+}
+
+#open-button {
+    background-color: rgba(20, 20, 20, 1);
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 

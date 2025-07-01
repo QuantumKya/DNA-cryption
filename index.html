@@ -26,13 +26,10 @@
         <div id="canvas-box">
             <canvas id="kansas"></canvas>
 
+            <span id="open-button" class="toggle-buttons" onclick="openMenu()" style="display: none;"><i class="fa-solid fa-bars"></i></span>
+
             <div id="canvas-controls">
-                <!--
-                <label for="menu-close" id="close-button" class="btn">
-                    <i class="fa-solid fa-x"></i>
-                </label>
-                <button id="menu-close" style="display: none;" onclick="toggleMenu()"></button>
-                -->
+                <span id="close-button" class="toggle-buttons" onclick="closeMenu()"><i class="fa-solid fa-x"></i></span>
 
                 <span>
                     <label for="spline-size">Spline Length</label>
