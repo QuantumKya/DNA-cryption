@@ -21,4 +21,4 @@ My next plan is to make a button for closing the panel, because right now it kin
 <br>
 <br>
 
-[<-- Previous Devlog](DNA_DEVLOG_6.md)
+[<-- Previous Devlog](DNA_DEVLOG_6.md)   [Next Devlog -->](DNA_DEVLOG_8.md)

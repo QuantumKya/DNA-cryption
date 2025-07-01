@@ -30,4 +30,4 @@ I also drew a logo for my project!
 <br>
 <br>
 
-[<-- Previous Devlog](DNA_DEVLOG_6.md)
+[<-- Previous Devlog](DNA_DEVLOG_7.md)
