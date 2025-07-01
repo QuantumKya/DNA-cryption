@@ -1,12 +1,7 @@
-@font-face {
-    font-family: Lingo;
-    src: url("./Lingo.ttf");
-}
-
 html {
     overflow-x: hidden;
     font-size: 22px;
-    font-family: Lingo;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
